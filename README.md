@@ -1,1 +1,6 @@
-# AndrinoJ_CollierV_CollinsA_HollenbeckK_HackAThon
+# HackAThon
+## AndrinoJ
+## CollierV
+## CollinsA
+## CunhaR
+## HollenbeckK
