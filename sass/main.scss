@@ -1,4 +1,61 @@
 body {
     color: black;
-    background-color: orange;
+    background-color: grey;
+}
+
+#mainNav button
+{
+    background: transparent;
+	width: 20px;
+	height: 20px;
+	border: 0px;
+	margin-left: auto;
+	margin-bottom: 20px;
+	transition: all .3s linear;
+}
+
+#mainNav button.expanded
+{
+	-webkit-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+.hamburgerMenuButton {
+    height: 20px;
+    width: 20px;
+}
+
+#mainNav
+{
+	display: flex;
+	flex-direction: column;
+}
+
+#mainNav ul li a
+{
+	display: block;
+	padding: 10px;
+	text-align: center;
+	color: orange;
+}
+
+#mainNav li
+{
+	border-bottom: 1px solid #efefef;
+}
+
+#mainNav li:first-child
+{
+	border-top: 1px solid #efefef;
+}
+
+#burgerCon
+{
+	display: none;
+}
+
+#burgerCon.slideToggle
+{
+	display: block;
 }

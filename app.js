@@ -4,12 +4,14 @@ const hbs = require("hbs"); // aka "handlebars"
 // console command "npm i -s hbs"
 const path = require("path");
 // const sql = require("./utils/sql");
+const fs = require('fs');
+const partials = ["content", "contact", "jak", "burgermenu", "video"];
 
 const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(express.static("public"));
+app.use(express.static(__dirname + '/public'));
 
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname + "/views"));
@@ -42,12 +44,8 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
   console.log(`Server running at ${port}`);
 });
-
-hbs.registerPartial('contentPartial', 'content');
-
-hbs.registerPartial('contactPartial', 'contact');
-
-hbs.registerPartial('jakPartial', 'jak');
-
-hbs.registerPartial('videoPartial', 'video');
-
+var filePath = null;
+for (i = 0; i < partials.length; i++) { 
+    filePath = hbs.compile(fs.readFileSync(__dirname + `/views/${partials[i]}.hbs`).toString("utf-8"));
+    hbs.registerPartial(partials[i], filePath);
+};
