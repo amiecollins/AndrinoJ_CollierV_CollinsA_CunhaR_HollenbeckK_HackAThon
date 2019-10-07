@@ -3,10 +3,12 @@ body {
     background-color: grey;
 }
 
-#backgroundImg
+#mainHeader
 {
-	background: url(../images/logo.svg) center no-repeat;
+	background-image: url("/images/header pic.jpg");
+	width: 30%;
 }
+
 
 #mainNav button
 {
