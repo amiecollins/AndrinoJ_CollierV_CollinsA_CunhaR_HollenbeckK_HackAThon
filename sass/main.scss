@@ -3,9 +3,14 @@ body {
     background-color: grey;
 }
 
+#backgroundImg
+{
+	background: url(../images/logo.svg) center no-repeat;
+}
+
 #mainNav button
 {
-    background: transparent;
+    background: none;
 	width: 20px;
 	height: 20px;
 	border: 0px;
@@ -22,8 +27,9 @@ body {
 }
 
 .hamburgerMenuButton {
-    height: 20px;
-    width: 20px;
+    height: 60px;
+	width: 60px;
+	display: flex;
 }
 
 #mainNav
