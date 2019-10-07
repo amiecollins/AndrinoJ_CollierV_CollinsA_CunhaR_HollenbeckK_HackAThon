@@ -4,4 +4,4 @@ const config = {
     port: 8889, // 3306 for windows or linux
     host: "localhost",
     db: "bizcard"
-}
+module.exports = config;
