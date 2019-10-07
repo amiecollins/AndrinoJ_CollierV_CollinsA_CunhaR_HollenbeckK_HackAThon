@@ -9,7 +9,7 @@ function compile(done) {
         .pipe(sass())
         .on('error', sass.logError)
         .pipe(postcss([prefixer(), nano()]))
-        .pipe(gulp.dest("./css"))
+        .pipe(gulp.dest("./public/css"))
         done()
 }
 
