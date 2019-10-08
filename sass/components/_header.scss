@@ -2,19 +2,25 @@
 
 #mainHeader
 {
-	width: 375px;
-	height: 500px;
+	width: 100%;
+	height: 100px;
 	padding: 0;
 	display: flex;
 	flex-direction: row;
-	background: url(/images/header_pic.jpg);
-	background-repeat: no-repeat;
+    background-image: url("/images/header_pic.jpg");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+    padding: 50px;
 }
 
-#mainLogo
-{
-	margin-left: -20px;
-	margin-top: -50px;
+#mainLogo {
+    width: 30%;
+}
+
+#mainLogo img {
+    width: 100%;
 }
 
 #mainNav button
@@ -24,9 +30,10 @@
 	height: 20px;
 	border: 0px;
 	position: relative;
-	left: 100px;
-	margin-bottom: 20px;
-	transition: all .3s linear;
+    right: 50px;
+    top: 50px;
+    transition: all .3s linear;
+    position: absolute;
 }
 
 #mainNav button.expanded
@@ -44,20 +51,24 @@
 #mainNav
 {
 	display: flex;
-	flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 20px;
 }
 
 #mainNav ul li a
 {
-	display: block;
+    display: block;
 	padding: 10px;
 	text-align: center;
-	color: orange;
+    color: orange;
+    background-color: white;
 }
 
-#mainNav li
+#mainNav ul li
 {
-	border-bottom: 1px solid #efefef;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 10px 0px;
 }
 
 #mainNav li:first-child
@@ -67,12 +78,16 @@
 
 #burgerCon
 {
-	display: none;
+    display: none;
+    z-index: 10;
+    top: 150px;
+    right: 50px;
 }
 
 #burgerCon.slideToggle
 {
-	display: block;
+    display: block;
+    position: absolute!important;
 }
 
 #thermoVid video
@@ -91,12 +106,4 @@
 {
 	display: flex;
 	flex-direction: column; 
-}
-
-@media screen and (min-width: 500px){
-	#mainHeader
-	{
-		width: 765px;
-		height: 1024px;
-	}
 }

@@ -1,6 +1,10 @@
 .content
 {
-	text-align: center;
+    text-align: center;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
 }
 
 .content div 
@@ -12,4 +16,8 @@
 .content img
 {
 	margin: 0 auto;
+}
+
+.content img {
+    width: 50%;
 }

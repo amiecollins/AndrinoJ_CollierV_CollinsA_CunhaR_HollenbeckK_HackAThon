@@ -14,7 +14,7 @@
 
   const sql = require("./utils/sql");
 
-  const port = process.env.PORT || 1000;
+  const port = process.env.PORT || 2177;
 
   const app = express();
 
@@ -64,7 +64,6 @@
     })
 
   if (videoData != null && contentData != null && locationData != null) {
-    console.log(locationData);
     res.render("home", { video: videoData, content: contentData, locations: locationData });
   }
   
