@@ -15,10 +15,16 @@ body {
 
 h1 {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 30px;
+	font-size: 35px;
 }
 
-h2, h3, h4, h5{
+h2
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 30px
+}
+
+h3, h4, h5{
 	font-size: 20px;
 	font-family: Arial, Helvetica, sans-serif
 }
@@ -39,22 +45,6 @@ h2, h3, h4, h5{
 	margin-left: -20px;
 	margin-top: -50px;
 }
-
-
-#thermoVid video
-{
-	width: 300px;
-	height: 300px;
-}
-
-@media screen and (min-width: 500px){
-	#mainHeader
-	{
-		width: 765px;
-		height: 1024px;
-	}
-}
-
 
 #mainNav button
 {
@@ -112,4 +102,46 @@ h2, h3, h4, h5{
 #burgerCon.slideToggle
 {
 	display: block;
+}
+
+#thermoVid video
+{
+	width: 300px;
+	height: 300px;
+}
+
+.content
+{
+	text-align: center;
+}
+
+.content div 
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.content img
+{
+	margin: 0 auto;
+}
+
+#mainFooter
+{
+	display: flex;
+	flex-direction: row;
+}
+
+#mainFooter nav ul 
+{
+	display: flex;
+	flex-direction: column; 
+}
+
+@media screen and (min-width: 500px){
+	#mainHeader
+	{
+		width: 765px;
+		height: 1024px;
+	}
 }
