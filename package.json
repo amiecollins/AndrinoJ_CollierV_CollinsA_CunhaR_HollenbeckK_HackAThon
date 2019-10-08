@@ -13,6 +13,8 @@
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
     "hbs": "^4.0.5",
+    "hbs-helpers": "^1.0.3",
+    "helpers-hbs": "^0.3.4",
     "mysql": "^2.17.1",
     "postcss": "^7.0.18",
     "sass": "^1.23.0"

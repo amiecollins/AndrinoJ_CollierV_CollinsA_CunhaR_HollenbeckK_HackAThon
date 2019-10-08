@@ -1,74 +1,82 @@
 
   const express = require("express");
-  // must log in console "npm i -s express" to install package
-  const hbs = require("hbs"); // aka "handlebars"
-  // console command "npm i -s hbs"
+
+  const hbs = require("hbs");
+  
+  const helpers = require("hbs-helpers");
+
   const path = require("path");
-  // const sql = require("./utils/sql");
+  
   const fs = require('fs');
 
   const sql = require("./utils/sql");
 
-  const port = process.env.PORT || 3336;
+  const port = process.env.PORT || 2000;
 
   const app = express();
 
-  var contentData = null;
+  var contentData;
 
-  var videoData = null;
+  var videoData;
 
-  var locationData = null;
+  var locationData;
 
-
+  // register helper function taken from https://handlebarsjs.com/block_helpers.html
 
   app.use(express.static(__dirname + '/public'));
 
   app.set("view engine", "hbs");
   app.set("views", path.join(__dirname + "/views"));
 
-  for (i = 0; i < 10 ; i++) {
-  app.get("/", (req, res) => {
-    
+  app.get("/", (req, res, next) => {
+    var page;
       sql.getConnection((err, connection) => {
     
       if (err) {
-        return console.log(err.message);
+        console.log(err.message);
+        return next();
       }
 
       let query = "SELECT * FROM video_tbl";
 
       sql.query(query, (err, video) => {
 
-        if (err) { return console.log(err.message); }
+        if (err) { console.log(err.message); return next(); }
         videoData = video;
-        console.log(videoData);
       })
-
+    
       query = "SELECT * FROM content_tbl";
-
+    
       sql.query(query, (err, content) => {
-
-        if (err) { return console.log(err.message); }
+    
+        if (err) { console.log(err.message); return next(); }
         contentData = content;
-        console.log(contentData);
-      })
-
-      query = "SELECT * FROM locations_tbl";
-
-      sql.query(query, (err, location) => {
-        connection.release();
-        if (err) { return console.log(err.message); }
-        locationData = location;
-        console.log(locationData);
       })
     })
-  
-  
-   res.render("home", { URL: videoData[0].URL });
-  })
-}
-  app.listen(port, () => {
-    console.log(`Server running at ${port}`);
-  });
 
+  if (contentData != null) {
+    console.log(contentData);
+    res.render("content", contentData);
+  }
+  
+})
+
+
+app.listen(port, () => {
+  console.log(`Server running at ${port}`);
+});
+
+  function next() {
+
+  };
  
+  
+  hbs.registerHelper('each', function(context, options) {
+    var ret = "";
+  
+    for(var i=0, j=context.length; i<j; i++) {
+      ret = ret + options.fn(context[i]);
+    }
+  
+    return ret;
+  });
