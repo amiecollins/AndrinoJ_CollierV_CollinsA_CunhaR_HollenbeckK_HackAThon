@@ -2,7 +2,7 @@
 
 console.log("SEAF Fired");
 
-const button = document.querySelector("#button");
+const button = document.querySelector(".button");
 var burgerCon = document.querySelector("#burgerCon");
 
 function hamburger() {
