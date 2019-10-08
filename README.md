@@ -1,5 +1,7 @@
 # ThermoSecure by HomeCom (Hack-a-thon) ![logo goes here](https://i.ibb.co/jDqFdXG/logo.png)
 
+Welcome to ThermoSecure by HomeCom
+
 ## Getting Started
 
 To view the website run npm start in the terminal or git bash window
