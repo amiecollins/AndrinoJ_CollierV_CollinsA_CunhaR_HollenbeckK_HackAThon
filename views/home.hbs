@@ -1,7 +1,8 @@
-<header id="mainHeader">
+    <header id="mainHeader">
+		<div  id="mainLogo"><img src="/images/logo.svg" height="200px" width="200px"></div>
         <nav id="mainNav">
 		<h2 class="hidden">Main Navigation</h2>
-		<button id="button"><img class="hamburgerMenuButton" src="/images/hamburger_menu.svg" alt="hamburger menu button"></button>
+		<button class="button"><img class="hamburgerMenuButton" src="/images/hamburger_menu.svg" alt="hamburger menu button"></button>
 		<div id="burgerCon">
 			<ul id="burgerMenu">
 				<li><a href="#">Home</a></li>
@@ -12,7 +13,30 @@
 		</div>
 	</nav>
 </header>
+<div class="content">
+    <video src="{{ video.0.URL }}" alt="{{ video.0.Alt }}" class="main_video" autoplay controls>
+        Error
+    </video>
 
-<video src="{{ URL }}" class="main_video" autoplay controls>
-    Error
-</video>
+    {{#each content }}
+
+    <h1>{{ this.Title }}</h1>
+    <p>{{ this.Description }}</p>
+
+    <img src="{{ this.URL }}" alt="{{ this.Alt }}">
+
+    {{/each}}
+</div>
+
+<h1>Meet Jak</h1>
+<p>The smartest A.I. on the planet, in feminine or masculine voice.</p>
+<div class="jak-container"><video class="jak" src="{{ video.1.URL }}" alt="{{ video.1.Alt }}" controls></video>
+
+<video class="jak" src="{{ video.2.URL }}" alt="{{ video.2.Alt }}" controls></video></div>
+
+<h1>Where to Buy</h1>
+<div class="locations-container">{{#each locations }}
+<a class="location-photo" href="{{ this.URL }}"><img src="{{ this.IMGURL }}" alt="{{ this.Alt }}"></a>
+{{/each}}
+</div>
+
