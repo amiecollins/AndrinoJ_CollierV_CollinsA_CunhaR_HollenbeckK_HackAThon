@@ -1,4 +1,4 @@
-# ThermoSecure by HomeCom (Hack-a-thon) ![logo goes here](https://i.ibb.co/jDqFdXG/logo.png)
+# ThermoSecure by HomeCom (Hack-a-thon) ![logo goes here](/public/images/logo.png)
 
 Welcome to ThermoSecure by HomeCom
 
