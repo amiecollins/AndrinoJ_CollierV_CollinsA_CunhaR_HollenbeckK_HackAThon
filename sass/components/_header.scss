@@ -1,3 +1,5 @@
+
+
 #mainHeader
 {
 	width: 375px;
@@ -14,22 +16,6 @@
 	margin-left: -20px;
 	margin-top: -50px;
 }
-
-
-#thermoVid video
-{
-	width: 300px;
-	height: 300px;
-}
-
-@media screen and (min-width: 500px){
-	#mainHeader
-	{
-		width: 765px;
-		height: 1024px;
-	}
-}
-
 
 #mainNav button
 {
@@ -87,4 +73,30 @@
 #burgerCon.slideToggle
 {
 	display: block;
+}
+
+#thermoVid video
+{
+	width: 300px;
+	height: 300px;
+}
+
+#mainFooter
+{
+	display: flex;
+	flex-direction: row;
+}
+
+#mainFooter nav ul 
+{
+	display: flex;
+	flex-direction: column; 
+}
+
+@media screen and (min-width: 500px){
+	#mainHeader
+	{
+		width: 765px;
+		height: 1024px;
+	}
 }
