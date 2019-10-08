@@ -1,9 +1,12 @@
 
   const express = require("express");
 
-  const hbs = require("hbs");
+  const hbs = require('handlebars/runtime')['default'];
+  const helpers = require('helpers-hbs');
+
   
-  const helpers = require("hbs-helpers");
+  hbs.registerHelper('each', require('handlebars-helper-each'));
+  
 
   const path = require("path");
   
@@ -11,7 +14,7 @@
 
   const sql = require("./utils/sql");
 
-  const port = process.env.PORT || 2000;
+  const port = process.env.PORT || 1000;
 
   const app = express();
 
@@ -20,8 +23,6 @@
   var videoData;
 
   var locationData;
-
-  // register helper function taken from https://handlebarsjs.com/block_helpers.html
 
   app.use(express.static(__dirname + '/public'));
 
@@ -52,11 +53,19 @@
         if (err) { console.log(err.message); return next(); }
         contentData = content;
       })
+
+      query = "SELECT * FROM locations_tbl";
+    
+      sql.query(query, (err, location) => {
+    
+        if (err) { console.log(err.message); return next(); }
+        locationData = location;
+      })
     })
 
-  if (contentData != null) {
-    console.log(contentData);
-    res.render("content", contentData);
+  if (videoData != null && contentData != null && locationData != null) {
+    console.log(locationData);
+    res.render("home", { video: videoData, content: contentData, locations: locationData });
   }
   
 })
@@ -69,14 +78,3 @@ app.listen(port, () => {
   function next() {
 
   };
- 
-  
-  hbs.registerHelper('each', function(context, options) {
-    var ret = "";
-  
-    for(var i=0, j=context.length; i<j; i++) {
-      ret = ret + options.fn(context[i]);
-    }
-  
-    return ret;
-  });

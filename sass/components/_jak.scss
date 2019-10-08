@@ -1,0 +1,18 @@
+.locations-container {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.location-photo {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-around;
+    align-self: center;
+}
+
+.location-photo img {
+    width: 30%;
+}
